@@ -167,7 +167,7 @@ const AlertCircle = ({ className }) => (
 
                 // Create map centered on US
                 map = new window.google.maps.Map(mapRef.current, {
-                    zoom: 4,
+                    zoom: 5,
                     center: { lat: 39.8283, lng: -98.5795 }, // Center of US
                     mapTypeId: 'roadmap',
                     styles: [
@@ -245,7 +245,7 @@ const AlertCircle = ({ className }) => (
                     
                     // Ensure we don't zoom in too much
                     const listener = window.google.maps.event.addListener(map, 'idle', function() {
-                        if (map.getZoom() > 10) map.setZoom(10);
+                        if (map.getZoom() > 8) map.setZoom(8);
                         window.google.maps.event.removeListener(listener);
                     });
                 }
